@@ -1,14 +1,24 @@
-import Experience from "../Experience/Experience"
+
+import Experience from "../Experience/Experience";
 import LoadingButton from "../LoadingButton/LoadingButton";
-import './LoadingCube.css'
 
-const LoadingCube = ()=>{
-    return(
-        <div className="loading-cube">
-            <Experience/>
-            <LoadingButton/>
-        </div>
-    )
-}
+import "./LoadingCube.css";
 
-export default LoadingCube
+const LoadingCube = () => {
+  // Works on localhost and GitHub Pages
+  const backgroundImage = `${import.meta.env.BASE_URL}CubeBaked.webp`;
+
+  return (
+    <div
+      className="loading-cube"
+      style={{
+        backgroundImage: `url("${backgroundImage}")`,
+      }}
+    >
+      <Experience />
+      <LoadingButton />
+    </div>
+  );
+};
+
+export default LoadingCube;
