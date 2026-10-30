@@ -1,0 +1,134 @@
+.hover-me-button {
+  position: absolute;
+  z-index: 99;
+
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 200px;
+  max-width: calc(100% - 32px);
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: rgb(247, 242, 242);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  color: #25243a;
+  border: none;
+  border-radius: 50px;
+
+  box-shadow:
+    0 8px 30px rgba(90, 80, 160, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   DESKTOP HOVER
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-me-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+      0 12px 35px rgba(130, 105, 220, 0.2),
+      0 0 20px rgba(190, 170, 255, 0.18);
+  }
+}
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.hover-me-button:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+/* ==========================================
+   KEYBOARD FOCUS
+========================================== */
+
+.hover-me-button:focus-visible {
+  outline: 2px solid #a892ee;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .hover-me-button {
+    top: 18%;
+    width: 180px;
+    height: 48px;
+
+    font-size: 13px;
+    gap: 8px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .hover-me-button {
+    top: 20%;
+
+    width: 160px;
+    height: 44px;
+
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    gap: 7px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .hover-me-button {
+    top: 20%;
+
+    width: 145px;
+    height: 42px;
+
+    font-size: 11px;
+    gap: 6px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-me-button {
+    transition: none;
+  }
+}
