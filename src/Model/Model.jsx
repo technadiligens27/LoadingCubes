@@ -52,6 +52,8 @@ const Model = ({
   // LOAD MODEL
   // ==========================================
 
+  
+
   const modelPath =
     `${import.meta.env.BASE_URL}LoadingCubes.glb`;
 
